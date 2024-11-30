@@ -11,7 +11,7 @@ const Header = () => {
         <div className="logo pl-4">
           <Link href="/">
             <Image
-              src="/assests/common/logo.jpg" // Replace with your logo's path
+              src="/assests/Header/logo.jpg" // Replace with your logo's path
               alt="Logo"
               width={200} // Set the appropriate width for the logo
               height={200} // Set the appropriate height for the logo
