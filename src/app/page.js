@@ -1,14 +1,15 @@
 'use client'
 
-// import Footer from '@/Components/Common/Footer';
-import Header from '@/app/component/Header';
-// import Banner from '@/Components/Home/Banner';
-// import Blog from '@/Components/Home/Blog';
-// import Faq from '@/Components/Home/Faq';
-// import Section1 from '@/Components/Home/Section1';
-// import Section2 from '@/Components/Home/Section2';
-// import Section3 from '@/Components/Home/Section3';
-// import Testimonials from '@/Components/Home/Testimonials';
+import Header from '@/app/component/common/Header';
+import Section1 from './component/Home/Section1';
+import Banner from './component/Home/Banner';
+import Section2 from './component/Home/Section2';
+import Section3 from './component/Home/Section3';
+import Testimonials from './component/Home/Testimonials';
+import Blog from './component/Home/Blog';
+import Faq from './component/Home/Faq';
+import Footer from './component/common/Footer';
+
 
 
 
@@ -17,14 +18,14 @@ export default function Home() {
   return (
     <>
     <Header/>
-     {/* <Banner />
-      <Section1 />
-      <Section2 />
-      <Section3 />
-      <Testimonials />
-      <Blog />
+    <Banner />
+    <Section1 />
+    <Section2 />
+    <Section3 />
+     <Testimonials />
+     <Blog />
       <Faq />
-      <Footer /> */}
+     <Footer />
     </>
   )
 }
