@@ -10,7 +10,7 @@ const Section2 = () => {
            backgroundBlendMode: "overlay", // Blends image with color for opacity
         }}
       >
-        <div className="bg-white shadow-md rounded-lg flex items-center justify-between p-6 max-w-4xl mx-auto mt-8">
+        <div className="bg-white shadow-md rounded-lg flex items-center justify-between p-6 max-w-4xl mx-auto mt-8 border border-gray-500">
           {/* Image Section */}
           <div className="flex items-center">
             <Image
