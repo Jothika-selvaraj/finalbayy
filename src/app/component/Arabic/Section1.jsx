@@ -34,7 +34,7 @@ const Section1 = () => {
             </div>
             <div className="mt-4">
               {/* Tabs */}
-              <div className="flex space-x-6 border-b border-gray-300">
+              <div className="flex space-x-6 border-b border-gray-300 overflow-x-auto">
                 {['description', 'courseContent', 'requirements', 'whatYouLearn'].map((tab) => (
                   <button
                     key={tab}

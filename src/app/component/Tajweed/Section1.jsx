@@ -7,11 +7,11 @@ const Section1 = () => {
   const [activeTab, setActiveTab] = useState("description");
 
   return (
-    <div className="p-6 min-h-screen">
+    <div className="p-2 sm:p-6 min-h-screen">
       <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg">
         {/* Header Section */}
-        <div className="p-6 border-b border-gray-200">
-          <h1 className="text-4xl font-bold text-gray-800">
+        <div className="p-4 sm:p-6 border-b border-gray-200">
+          <h1 className="text-2xl sm:text-4xl font-bold text-gray-800">
             Tajweed & Makhraj Course
           </h1>
           <p className="mt-2 text-sm text-gray-600">
@@ -21,9 +21,9 @@ const Section1 = () => {
         </div>
 
         {/* Content Section */}
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col lg:flex-row">
           {/* Left Section */}
-          <div className="flex-1 p-6">
+          <div className="flex-1 p-4 sm:p-6">
             <div className="bg-gray-100 border border-gray-300 rounded-lg h-64 flex items-center justify-center overflow-hidden">
               <Image
                 src="/assests/Courses/tajbann.jpg" // Replace this with the actual path to your image
@@ -34,32 +34,34 @@ const Section1 = () => {
               />
             </div>
             <div className="mt-4">
-              {/* Tabs */}
-              <div className="flex space-x-6 border-b border-gray-300 upp">
-                <button
-                  className={`pb-2 uppercase ${activeTab === "description" ? "bg-[#f14d5d] text-white p-2 rounded border-b-2 uppercase" : "text-gray-900"}`}
-                  onClick={() => setActiveTab("description")}
-                >
-                  Description
-                </button>
-                <button
-                  className={`pb-2 uppercase ${activeTab === "courseContent" ? "bg-[#f14d5d] text-white p-2 rounded border-b-2 uppercase" : "text-gray-900"}`}
-                  onClick={() => setActiveTab("courseContent")}
-                >
-                  Course Content
-                </button>
-                <button
-                  className={`pb-2 uppercase ${activeTab === "requirements" ? "bg-[#f14d5d] text-white p-2 rounded border-b-2 uppercase" : "text-gray-900"}`}
-                  onClick={() => setActiveTab("requirements")}
-                >
-                  Requirements
-                </button>
-                <button
-                  className={`pb-2 uppercase ${activeTab === "whatYouLearn" ? "bg-[#f14d5d] text-white p-2 rounded border-b-2 uppercase" : "text-gray-900"}`}
-                  onClick={() => setActiveTab("whatYouLearn")}
-                >
-                  What You&apos;ll Learn
-                </button>
+              {/* Tabs - Made scrollable on mobile */}
+              <div className="mt-4 overflow-x-auto">
+                <div className="flex space-x-4 sm:space-x-6 border-b border-gray-300 pb-2 min-w-max">
+                  <button
+                    className={`pb-2 uppercase ${activeTab === "description" ? "bg-[#f14d5d] text-white p-2 rounded border-b-2 uppercase" : "text-gray-900"}`}
+                    onClick={() => setActiveTab("description")}
+                  >
+                    Description
+                  </button>
+                  <button
+                    className={`pb-2 uppercase ${activeTab === "courseContent" ? "bg-[#f14d5d] text-white p-2 rounded border-b-2 uppercase" : "text-gray-900"}`}
+                    onClick={() => setActiveTab("courseContent")}
+                  >
+                    Course Content
+                  </button>
+                  <button
+                    className={`pb-2 uppercase ${activeTab === "requirements" ? "bg-[#f14d5d] text-white p-2 rounded border-b-2 uppercase" : "text-gray-900"}`}
+                    onClick={() => setActiveTab("requirements")}
+                  >
+                    Requirements
+                  </button>
+                  <button
+                    className={`pb-2 uppercase ${activeTab === "whatYouLearn" ? "bg-[#f14d5d] text-white p-2 rounded border-b-2 uppercase" : "text-gray-900"}`}
+                    onClick={() => setActiveTab("whatYouLearn")}
+                  >
+                    What You&apos;ll Learn
+                  </button>
+                </div>
               </div>
 
               {/* Tab Content */}
@@ -84,14 +86,16 @@ const Section1 = () => {
           </div>
 
           {/* Right Section */}
-          <div className="w-full md:w-1/3 p-6 border-l border-gray-200">
+          <div className="w-full lg:w-1/3 p-4 sm:p-6 border-t lg:border-t-0 lg:border-l border-gray-200">
             <div className="bg-gray-100 p-4 rounded-lg border border-gray-300">
-              <Image
-                src="/assests/Courses/tajweed.jpg" // Replace with the actual image path
-                alt="Course Details"
-                width={640}
-                height={360}
-              />
+              <div className="relative w-full aspect-video mb-4">
+                <Image
+                  src="/assests/Courses/tajweed.jpg" // Replace with the actual image path
+                  alt="Course Details"
+                  width={640}
+                  height={360}
+                />
+              </div>
               <h3 className="text-xl font-semibold text-gray-900 text-center">
                 Course Details
               </h3>

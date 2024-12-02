@@ -5,24 +5,24 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaFacebook, FaTwitter, FaPinterest
 
 const Section1 = () => {
   return (
-    <div className="flex items-start justify-between gap-16 p-8 bg-white max-w-screen-2xl mx-auto">
+    <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-16 p-4 lg:p-8 bg-white max-w-screen-2xl mx-auto">
       {/* Form Section */}
       <div className="w-full lg:w-1/2">
-        <h2 className="text-5xl font-bold mt-4">Get In Touch</h2>
+        <h2 className="text-3xl lg:text-5xl font-bold mt-4">Get In Touch</h2>
         <p className="text-gray-600 mb-2 text-lg">
           Have a question or just want to say hi? We&apos;d love to hear from you.
         </p>
         <form className="space-y-6 mt-8">
-          <div className="flex gap-4 ">
+          <div className="flex flex-col sm:flex-row gap-4">
             <input
               type="text"
               placeholder="Your Name"
-              className="w-1/2 p-3 border border-gray-300 bg-blue-gray-50 "
+              className="w-full sm:w-1/2 p-3 border border-gray-300 bg-blue-gray-50"
             />
             <input
               type="email"
               placeholder="Your Email"
-              className="w-1/2 p-3 border border-gray-300 bg-blue-gray-50 "
+              className="w-full sm:w-1/2 p-3 border border-gray-300 bg-blue-gray-50"
             />
           </div>
           <input
@@ -52,7 +52,7 @@ const Section1 = () => {
       </div>
 
       {/* Contact Information Section */}
-      <div className="w-full lg:w-1/2 p-12 bg-white shadow-lg justify-center h-auto min-h-[500px]">
+      <div className="w-full lg:w-1/2 p-6 lg:p-12 bg-white shadow-lg justify-center h-auto min-h-[500px] mt-8 lg:mt-0">
         <div className="space-y-6">
           {/* Office Information */}
           <div className="flex items-start gap-4">

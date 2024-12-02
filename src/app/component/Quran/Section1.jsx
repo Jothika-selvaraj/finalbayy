@@ -8,11 +8,11 @@ const Section1 = () => {
   const [activeTab, setActiveTab] = useState("description");
 
   return (
-    <div className="p-6 min-h-screen">
+    <div className="p-2 sm:p-6 min-h-screen">
       <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg">
         {/* Header Section */}
-        <div className="p-6 border-b border-gray-200">
-          <h1 className="text-3xl font-bold text-gray-800">
+        <div className="p-4 sm:p-6 border-b border-gray-200">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
             Quran & Memorization
           </h1>
           <p className="mt-2 text-sm text-gray-600">
@@ -24,7 +24,7 @@ const Section1 = () => {
         {/* Content Section */}
         <div className="flex flex-col md:flex-row">
           {/* Left Section */}
-          <div className="flex-1 p-6">
+          <div className="flex-1 p-4 sm:p-6">
             <div className="bg-gray-100 border border-gray-300 rounded-lg h-64 flex items-center justify-center overflow-hidden">
               <Image
                 src="/assests/Courses/quran1.jpg" // Replace this with the actual path to your image
@@ -36,11 +36,11 @@ const Section1 = () => {
             </div>
             <div className="mt-4">
               {/* Tabs */}
-              <div className="flex space-x-6 border-b border-gray-300 upp">
+              <div className="flex flex-col sm:flex-row sm:space-x-6 space-y-2 sm:space-y-0 border-b border-gray-300">
                 <button
-                  className={`pb-2 uppercase ${
+                  className={`pb-2 text-sm sm:text-base uppercase ${
                     activeTab === "description"
-                      ? "bg-[#f14d5d] text-white p-2 rounded border-b-2  uppercase"
+                      ? "bg-[#f14d5d] text-white p-2 rounded border-b-2 uppercase"
                       : "text-gray-900"
                   }`}
                   onClick={() => setActiveTab("description")}
@@ -48,9 +48,9 @@ const Section1 = () => {
                   Description
                 </button>
                 <button
-                  className={`pb-2 uppercase ${
+                  className={`pb-2 text-sm sm:text-base uppercase ${
                     activeTab === "courseContent"
-                      ? "bg-[#f14d5d] text-white p-2 rounded border-b-2  uppercase"
+                      ? "bg-[#f14d5d] text-white p-2 rounded border-b-2 uppercase"
                       : "text-gray-900"
                   }`}
                   onClick={() => setActiveTab("courseContent")}
@@ -58,9 +58,9 @@ const Section1 = () => {
                   Course Content
                 </button>
                 <button
-                  className={`pb-2 uppercase ${
+                  className={`pb-2 text-sm sm:text-base uppercase ${
                     activeTab === "requirements"
-                      ? "bg-[#f14d5d] text-white p-2 rounded border-b-2  uppercase"
+                      ? "bg-[#f14d5d] text-white p-2 rounded border-b-2 uppercase"
                       : "text-gray-900"
                   }`}
                   onClick={() => setActiveTab("requirements")}
@@ -68,9 +68,9 @@ const Section1 = () => {
                   Requirements
                 </button>
                 <button
-                  className={`pb-2 uppercase ${
+                  className={`pb-2 text-sm sm:text-base uppercase ${
                     activeTab === "whatYouLearn"
-                      ? "bg-[#f14d5d] text-white p-2 rounded border-b-2  uppercase"
+                      ? "bg-[#f14d5d] text-white p-2 rounded border-b-2 uppercase"
                       : "text-gray-900"
                   }`}
                   onClick={() => setActiveTab("whatYouLearn")}
@@ -80,7 +80,7 @@ const Section1 = () => {
               </div>
 
               {/* Tab Content */}
-              <div className="mt-8 text-gray-700">
+              <div className="mt-4 sm:mt-8 text-gray-700 text-sm sm:text-base">
                 {activeTab === "description" && (
                   <p>
                     <span className="text-[#204f61] text-left font-bold">QURAN COURSE</span><br /> <br />
@@ -101,7 +101,7 @@ const Section1 = () => {
           </div>
 
           {/* Right Section */}
-          <div className="w-full md:w-1/3 p-6 border-l border-gray-200">
+          <div className="w-full md:w-1/3 p-4 sm:p-6 border-l border-gray-200">
             <div className="bg-gray-100 p-4 rounded-lg border border-gray-300">
               <Image
                 src="/assests/Courses/tajweed.jpg"

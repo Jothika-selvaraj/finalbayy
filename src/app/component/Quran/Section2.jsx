@@ -10,9 +10,9 @@ const Section2 = () => {
            backgroundBlendMode: "overlay", // Blends image with color for opacity
         }}
       >
-        <div className="bg-white shadow-md rounded-lg flex items-center justify-between p-6 max-w-4xl mx-auto mt-8 border border-gray-500">
+        <div className="bg-white shadow-md rounded-lg flex flex-col md:flex-row items-center justify-between p-6 max-w-4xl mx-auto mt-8 border border-gray-500">
           {/* Image Section */}
-          <div className="flex items-center">
+          <div className="flex items-center mb-4 md:mb-0">
             <Image
               src="/assests/Courses/t1.png" // Replace with the actual image path
               alt="Guiding star"
@@ -20,7 +20,7 @@ const Section2 = () => {
               width={112} // Set the width for the image
               height={112} // Set the height for the image
             />
-            <p className="text-xl md:text-2xl font-semibold text-gray-800 ml-4">
+            <p className="text-lg md:text-xl font-semibold text-gray-800 ml-4">
               You can be your own <br /> 
               <span className="text-gray-900">Guiding star with our help!</span>
             </p> 

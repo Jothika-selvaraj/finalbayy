@@ -1,9 +1,14 @@
-import React from 'react';
+
+"use client"
+
+import React, { useState } from 'react';
 import Link from 'next/link'; // Import Next.js Link
 import { FaShoppingCart, FaPhone, FaEnvelope } from 'react-icons/fa'; // Import icons
 import Image from 'next/image'; // Import Image from next/image
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="bg-white shadow-md py-4 px-2">
       <div className="flex justify-between items-center container mx-auto">
@@ -15,14 +20,28 @@ const Header = () => {
               alt="Logo"
               width={200} // Set the appropriate width for the logo
               height={200} // Set the appropriate height for the logo
-              className='h-auto'
+              className='h-auto w-auto max-w-[150px] md:max-w-[200px]'
             />
           </Link>
         </div>
 
-        {/* Centered Navigation Menu */}
-        <nav className="flex justify-center items-center space-x-6">
-          <ul className="list-none p-0 flex gap-6">
+        {/* Hamburger Menu Button (visible on mobile) */}
+        <button 
+          className="lg:hidden text-black p-2"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {isMenuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
+
+        {/* Navigation Menu - Desktop and Mobile */}
+        <nav className={`${isMenuOpen ? 'block' : 'hidden'} lg:flex absolute lg:relative top-full left-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none z-50 lg:justify-center lg:items-center`}>
+          <ul className="list-none p-4 lg:p-0 lg:flex lg:gap-6 space-y-4 lg:space-y-0">
             {/* Courses List */}
             <li className="relative group">
               <Link href="/course" className="text-black text-lg text-left hover:text-[#f14d5d]">

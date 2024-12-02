@@ -23,15 +23,15 @@ const Blog = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto">
+    <section className="py-8 sm:py-12 md:py-16 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Header Section */}
-        <div className="text-center mb-12">
-         <h3 className="text-lg font-semibold text-[#204f61]">BLOGS & NEWS</h3>
-          <h2 className="text-5xl mt-5 text-black mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h3 className="text-base sm:text-lg font-semibold text-[#204f61]">BLOGS & NEWS</h3>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl mt-3 sm:mt-5 text-black mb-3 sm:mb-4">
             Articles and Blog From Educine
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto mt-10 text-lg">
+          <p className="text-gray-600 max-w-2xl mx-auto mt-6 sm:mt-10 text-base sm:text-lg px-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus, luctus nec ullamcorper, pulvinar dapibus leo.
           </p>
@@ -39,7 +39,7 @@ const Blog = () => {
 
         {/* Blog Cards */}
         <div className="flex justify-center items-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-9 h-full lg:w-5/6 mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-9 w-full lg:w-5/6 mx-auto">
             {blogPosts.map((post) => (
               <div key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden w-full">
                 <Image
@@ -47,14 +47,14 @@ const Blog = () => {
                   alt={post.alt}
                   width={500}
                   height={300}
-                  className="w-full h-60 object-cover"
+                  className="w-full h-48 sm:h-60 object-cover"
                 />
-                <div className="p-6 bg-blue-gray-50">
-                  <p className="text-sm text-gray-500 mb-2">ASK Project • June 3, 2024</p>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                <div className="p-4 sm:p-6 bg-blue-gray-50">
+                  <p className="text-xs sm:text-sm text-gray-500 mb-2">ASK Project • June 3, 2024</p>
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2 sm:mb-3">
                     {post.title}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-sm sm:text-base text-gray-600">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
                     venenatis odio...
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
@@ -65,7 +65,6 @@ const Blog = () => {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

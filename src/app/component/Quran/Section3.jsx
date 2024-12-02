@@ -2,10 +2,10 @@ import React from "react";
 import Image from "next/image";
 const Section3 = () => {
   return (
-    <div className="py-16 px-8 bg-gray-50">
+    <div className="py-16 px-4 md:px-8 bg-gray-50">
       {/* Header */}
-      <div className="text-left mb-12 pl-40">
-        <h2 className="text-5xl text-black">
+      <div className="text-left mb-12 pl-4 md:pl-40">
+        <h2 className="text-3xl md:text-5xl text-black">
           Related <span className="text-[#f14d5d] font-bold">Course</span>
         </h2>
         <p className="mt-4 text-gray-600">
@@ -14,11 +14,11 @@ const Section3 = () => {
       </div>
 
       {/* Course Cards */}
-      <div className="flex justify-left gap-6 pl-40">
+      <div className="flex flex-col md:flex-row justify-center md:justify-left gap-6 pl-4 md:pl-40">
         {/* Card 1 */}
         <a
           href="/courses/quranic-studies"
-          className="bg-white border rounded-lg shadow-md overflow-hidden w-[300px] hover:shadow-lg transition-shadow duration-300"
+          className="bg-white border rounded-lg shadow-md overflow-hidden w-full md:w-[300px] hover:shadow-lg transition-shadow duration-300"
           aria-label="Quranic Studies Course"
         >
           <div className="relative">
@@ -43,7 +43,7 @@ const Section3 = () => {
         {/* Card 2 */}
         <a
           href="/courses/arabic-studies"
-          className="bg-white border rounded-lg shadow-md overflow-hidden w-[300px] hover:shadow-lg transition-shadow duration-300"
+          className="bg-white border rounded-lg shadow-md overflow-hidden w-full md:w-[300px] hover:shadow-lg transition-shadow duration-300"
           aria-label="Arabic Studies Course"
         >
           <div className="relative">

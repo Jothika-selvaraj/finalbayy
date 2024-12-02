@@ -5,18 +5,18 @@ const Pricing = () => {
     <div className="py-16 px-8 bg-gray-50">
       {/* Header */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-800">
-          Select The Best Plan <br /> For Your Needs
+        <h2 className="text-4xl md:text-3xl sm:text-2xl font-bold text-gray-800">
+          Select The Best Plan <br className="hidden sm:block" /> For Your Needs
         </h2>
-        <p className="mt-4 text-gray-600">
+        <p className="mt-4 text-gray-600 text-sm md:text-base">
           Simple and Transparent with no hidden fees.
         </p>
       </div>
 
       {/* Pricing Cards */}
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
         {/* Card 1 */}
-        <div className="w-[300px] bg-white border-[2px] border-[#f14d5d] rounded-3xl shadow-lg text-center overflow-hidden">
+        <div className="w-full bg-white border-[2px] border-[#f14d5d] rounded-3xl shadow-lg text-center overflow-hidden">
           {/* Title Section */}
           <div className="p-2">
             <h3 className="text-2xl font-bold text-[#f14d5d]">Basic</h3>
@@ -56,7 +56,7 @@ const Pricing = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="w-[300px] bg-white border-[2px] border-[#5b8dfc] rounded-3xl shadow-lg text-center overflow-hidden">
+        <div className="w-full bg-white border-[2px] border-[#5b8dfc] rounded-3xl shadow-lg text-center overflow-hidden">
           {/* Title Section */}
           <div className="p-2">
             <h3 className="text-2xl font-bold text-[#5b8dfc]">Necessary</h3>
@@ -96,7 +96,7 @@ const Pricing = () => {
         </div>
 
         {/* Card 3 */}
-        <div className="w-[300px] bg-white border-[2px] border-gray-400 rounded-3xl shadow-lg text-center overflow-hidden">
+        <div className="w-full bg-white border-[2px] border-gray-400 rounded-3xl shadow-lg text-center overflow-hidden">
           {/* Title Section */}
           <div className="p-2">
             <h3 className="text-2xl font-bold text-gray-900">Exclusive</h3>
@@ -136,7 +136,7 @@ const Pricing = () => {
         </div>
 
         {/* Card 4 */}
-        <div className="w-[300px] bg-white border-[2px] border-[#7b5bf9] rounded-3xl shadow-lg text-center overflow-hidden">
+        <div className="w-full bg-white border-[2px] border-[#7b5bf9] rounded-3xl shadow-lg text-center overflow-hidden">
           {/* Title Section */}
           <div className="p-2">
             <h3 className="text-2xl font-bold text-[#7b5bf9]">Premium</h3>
@@ -177,8 +177,8 @@ const Pricing = () => {
       </div>
 
       {/* Footer */}
-      <div className="mt-16 text-left">
-        <p className="text-sm text-gray-600">
+      <div className="mt-16 text-left px-4">
+        <p className="text-xs sm:text-sm text-gray-600">
           * The rescheduled class must be completed within 20 days. <br />
           ** Re-Schedule or Cancellations must be informed to Teacher/Admin at least 4 hours before
           the lesson&apos;s start time. <br />
@@ -186,8 +186,10 @@ const Pricing = () => {
           **** Payments need to be made in US currency only.
         </p>
       </div>
-      <div className="mt-12 text-center bg-white p-6 shadow-md rounded-lg max-w-4xl mx-auto border-8 border-gray-400">
-      <button className="hover:underline">Join the Academy and Transform Your Skills</button>
+      <div className="mt-12 text-center bg-white p-4 sm:p-6 shadow-md rounded-lg max-w-4xl mx-auto border-4 sm:border-8 border-gray-400">
+        <button className="hover:underline text-sm sm:text-base">
+          Join the Academy and Transform Your Skills
+        </button>
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ const FaqBanner = () => {
               backgroundRepeat: "no-repeat",
              }}
         >
-      <div className="max-w-6xl mx-auto flex justify-between items-center py-20 px-4">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center py-10 md:py-20 px-4 gap-4 md:gap-0">
         {/* Left Section (FAQ Heading) */}
         <h1 className="text-5xl font-bold text-white">FAQ</h1>
 

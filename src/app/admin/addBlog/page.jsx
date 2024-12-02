@@ -3,7 +3,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-import ThumbnailGenerator from 'react-thumbnail-generator';
 
 const AddBlog = () => {
   const [data, setData] = useState({
@@ -30,13 +29,7 @@ const AddBlog = () => {
     }
   };
 
-  // Generate a thumbnail for the selected image
-  const generateThumbnail = async () => {
-    if (data.image) {
-      const blobUrl = URL.createObjectURL(data.image);
-      setData((prev) => ({ ...prev, imagePreviewUrl: blobUrl }));
-    }
-  };
+
 
   // Handle form submission
   const onSubmitHandler = async (e) => {
@@ -64,7 +57,7 @@ const AddBlog = () => {
       });
       
      // Handle response
-     if (response.status === 201) {
+     if (response.status === 202) {
       toast.success('Blog added successfully!');
       console.log('[DEBUG] Blog added:', response.data);
       setData({ title: '', content: '', author: '', image: null }); // Reset form

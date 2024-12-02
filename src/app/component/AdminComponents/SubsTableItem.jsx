@@ -10,7 +10,7 @@ const SubsTableItem = ({ email, mongoId, deleteEmail, date }) => {
       <th scope='row' className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap'>
         {email || "No Email"}
       </th>
-      <td className='px-6 py-4 hidden sm:block'>{emailDate.toDateString()}</td>
+      <td className='px-6 py-4'>{emailDate.toDateString()}</td>
       <td className='px-6 py-4'>
         <button onClick={() => deleteEmail(mongoId)} className="cursor-pointer">x</button>
       </td>

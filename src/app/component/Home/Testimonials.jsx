@@ -75,7 +75,7 @@ const Testimonials = () => {
 
   return (
     <section className="bg-blue-gray-50 py-16">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl mb-4">Our Students Says</h2>
           <p className="text-gray-600">Discover Your Perfect Program In Our Courses.</p>

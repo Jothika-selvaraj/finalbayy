@@ -3,23 +3,23 @@ import Image
  from "next/image";
 const Section3 = () => {
   return (
-    <div className="py-16 px-8 bg-gray-50">
+    <div className="py-8 sm:py-16 px-4 sm:px-8 bg-gray-50">
       {/* Header */}
-      <div className="text-left mb-12 pl-40">
-        <h2 className="text-5xl text-black">
+      <div className="text-left mb-8 sm:mb-12 px-2 sm:pl-40">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl text-black">
           Related <span className="text-[#f14d5d] font-bold">Course</span>
         </h2>
-        <p className="mt-4 text-gray-600">
+        <p className="mt-2 sm:mt-4 text-sm sm:text-base text-gray-600">
           You don&apos;t have to struggle alone, you&apos;ve got our assistance and help.
         </p>
       </div>
 
       {/* Course Cards */}
-      <div className="flex justify-start gap-6 pl-40">
+      <div className="flex flex-col sm:flex-row justify-start gap-4 sm:gap-6 px-2 sm:pl-40">
         {/* Card 1 */}
         <a
           href="/courses/quranic-studies"
-          className="bg-white border rounded-lg shadow-md overflow-hidden w-[300px] hover:shadow-lg transition-shadow duration-300"
+          className="bg-white border rounded-lg shadow-md overflow-hidden w-full sm:w-[300px] mb-4 sm:mb-0 hover:shadow-lg transition-shadow duration-300"
         >
           <div className="relative">
             <Image
@@ -27,14 +27,14 @@ const Section3 = () => {
               alt="Quranic Studies Course"
               width={300}
               height={192}
-              className="w-full h-48 object-cover"
+              className="w-full h-40 sm:h-48 object-cover"
             />
-            <span className="absolute top-3 left-3 bg-[#f14d5d] text-white text-sm px-3 py-1 rounded-full">
+            <span className="absolute top-3 left-3 bg-[#f14d5d] text-white text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-full">
               Quranic
             </span>
           </div>
-          <div className="p-6">
-            <h3 className="text-lg text-gray-800 text-justify">
+          <div className="p-4 sm:p-6">
+            <h3 className="text-base sm:text-lg text-gray-800 text-justify">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio veritatis consectetur, porro possimus neque perferendi
             </h3>
           </div>
@@ -43,7 +43,7 @@ const Section3 = () => {
         {/* Card 2 */}
         <a
           href="/courses/arabic-language"
-          className="bg-white border rounded-lg shadow-md overflow-hidden w-[300px] hover:shadow-lg transition-shadow duration-300"
+          className="bg-white border rounded-lg shadow-md overflow-hidden w-full sm:w-[300px] hover:shadow-lg transition-shadow duration-300"
         >
           <div className="relative">
             <Image

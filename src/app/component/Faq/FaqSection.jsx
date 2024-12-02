@@ -41,46 +41,46 @@ const FaqSection = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
+    <div className="max-w-6xl mx-auto px-4 py-8 sm:py-12">
       {/* Search Section */}
-      <div className="text-center mb-8">
-        <h2 className="text-4xl text-gray-800">How Can We Help You?</h2>
-        <form onSubmit={handleSearch} className="mt-8 flex justify-center">
+      <div className="text-center mb-6 sm:mb-8">
+        <h2 className="text-3xl sm:text-4xl text-gray-800">How Can We Help You?</h2>
+        <form onSubmit={handleSearch} className="mt-6 sm:mt-8 flex justify-center">
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Enter the keyword..."
-            className="px-4 py-4 w-full max-w-md border shadow-md rounded-xl"
+            className="px-3 sm:px-4 py-3 sm:py-4 w-full max-w-md border shadow-md rounded-xl text-sm sm:text-base"
           />
-          <button className="px-6 py-2 bg-[#1f1a41] text-white rounded-r-md hover:bg-gray-800">
+          <button className="px-4 sm:px-6 py-2 bg-[#1f1a41] text-white rounded-r-md hover:bg-gray-800 text-sm sm:text-base">
             Search
           </button>
         </form>
       </div>
 
       {/* FAQ Section */}
-      <div className="flex flex-col lg:flex-row gap-12">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
         {/* Left: FAQ List */}
         <div className="w-full lg:w-2/3">
-          <h3 className="text-4xl text-gray-800 mb-6">Frequently Asked Questions</h3>
-          <div className="space-y-4">
+          <h3 className="text-3xl sm:text-4xl text-gray-800 mb-4 sm:mb-6">Frequently Asked Questions</h3>
+          <div className="space-y-3 sm:space-y-4">
             {faqData.map((question, index) => (
               <button
                 key={index}
-                className="border-b border-gray-300 pb-4 cursor-pointer py-6 w-full text-left"
+                className="border-b border-gray-300 pb-3 sm:pb-4 cursor-pointer py-4 sm:py-6 w-full text-left"
                 onClick={() => toggleQuestion(index)}
               >
                 <div className="flex justify-between items-center">
-                  <h4 className="text-xl  text-gray-800">{question.question}</h4>
+                  <h4 className="text-lg sm:text-xl text-gray-800 pr-4">{question.question}</h4>
                   {openQuestion === index ? (
-                    <FiChevronUp className="text-gray-600 text-xl" />
+                    <FiChevronUp className="text-gray-600 text-lg sm:text-xl flex-shrink-0" />
                   ) : (
-                    <FiChevronDown className="text-gray-600 text-xl" />
+                    <FiChevronDown className="text-gray-600 text-lg sm:text-xl flex-shrink-0" />
                   )}
                 </div>
                 {openQuestion === index && (
-                  <p className="mt-4 text-gray-600">{question.answer}</p>
+                  <p className="mt-3 sm:mt-4 text-gray-600 text-sm sm:text-base">{question.answer}</p>
                 )}
               </button>
             ))}
