@@ -1,12 +1,11 @@
 'use client'
+
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { toast } from 'react-toastify';
-import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';  // Ensure react-toastify is installed
 
-const Page = () => {
-
-  const [blogs,setBlogs] = useState([]);
+const BlogList = () => {
+  const [blogs, setBlogs] = useState([]);
 
   const fetchBlogs = async () => {
     const endpoint = 'http://localhost:3001/api/blogs';
@@ -15,8 +14,12 @@ const Page = () => {
       throw new Error('Network response was not ok');
     }
     const data = await response.json();
+    console.log("data>>>",data);
     setBlogs(data.blogs || data);
   };
+
+  
+  
 
 
   const deleteBlog = async (id) => {
@@ -31,64 +34,69 @@ const Page = () => {
     }
   };
 
-  useEffect(()=>{
-    fetchBlogs()
-  },[])
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
 
   return (
-    <div className='flex-1 pt-5 px-5 sm:pt-12 sm:pl-16'>
-      <h1>All blogs</h1>
-      <div className="relative h-[80vh] max-w-[850px] overflow-x-auto mt-4 border border-gray-400 scrollbar-hide">
-                <table className="w-full text-sm text-gray-500">
-                    <thead className="text-xs text-gray-700 text-left uppercase bg-gray-50">
-                        <tr>
-                            <th scope="col" className="hidden sm:block px-6 py-3">
-                                Author name
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Blog Title
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Date
-                            </th>
-                            <th scope="col" className="px-2 py-3">
-                                Action
-                            </th>
-                        </tr>
-                    </thead>
-        <tbody>
-          {Array.isArray(blogs) ? (
-               blogs.map((blog) => (
-                 <tr key={blog._id}>
-                  <td>{blog.author}</td>
-                  <td>{blog.title}</td>
-                  <td>{new Date(blog.createdAt).toLocaleDateString()}</td>
-                  <td>
+    <div className="p-4 sm:p-6 md:p-8">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-800">All Blogs</h1>
+      
+      {/* Responsive table wrapper with horizontal scroll for mobile */}
+      <div className="overflow-x-auto shadow-md rounded-lg">
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Author Name</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Blog Title</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {Array.isArray(blogs) ? (
+              blogs.map((blog) => (
+                <tr key={blog._id} className="hover:bg-gray-50">
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">{blog.author}</td>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">{blog.title}</td>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
+                    {new Date(blog.createdAt).toLocaleDateString()}
+                  </td>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
                     {blog.image ? (
-                      <Image 
-                        src={`http://localhost:3001/${blog.image}`} 
+                      <img 
+                        src={blog.image} 
+                        className="w-20 h-20 object-cover rounded-lg"
                         alt={blog.title}
-                        className="w-24 h-16 object-cover"
                       />
                     ) : (
-                      <span>No image available</span>
+                      <span className="text-gray-400 italic">No image available</span>
                     )}
                   </td>
-                  <td>
-                    <button onClick={() => deleteBlog(blog._id)}>Delete</button>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm">
+                    <button 
+                      onClick={() => deleteBlog(blog._id)}
+                      className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition-colors duration-200"
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
-          ))
-        ) : (
-          <tr>
-            <td colSpan="5">No blogs found</td>
-          </tr>
-        )}
-                    </tbody>
-                </table>
-            </div>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="5" className="px-4 py-4 text-center text-gray-500 text-sm">
+                  No blogs found
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Page
+
+export default BlogList;
