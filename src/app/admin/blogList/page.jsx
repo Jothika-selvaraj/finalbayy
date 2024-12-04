@@ -23,6 +23,7 @@ const BlogList = () => {
     }
   };
 
+
   const deleteBlog = async (id) => {
     try {
       const response = await axios.delete(`http://88.222.215.48:3001/api/blogs/${id}`);
